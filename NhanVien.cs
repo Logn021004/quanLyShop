@@ -31,6 +31,7 @@ namespace quanLyShop
             dtgvNhanVien.EditingControlShowing += dtgvNhanVien_EditingControlShowing;
             dtgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+
         }
 
 
