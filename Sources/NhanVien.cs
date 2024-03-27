@@ -30,6 +30,8 @@ namespace quanLyShop
             txtTimKiem.TextChanged += txtTimKiem_TextChanged;
             dtgvNhanVien.EditingControlShowing += dtgvNhanVien_EditingControlShowing;
             dtgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+
         }
 
 
@@ -191,6 +193,8 @@ namespace quanLyShop
                 textbox.KeyPress += new KeyPressEventHandler(dtgvNhanVien_KeyPress);
             }
         }
+
+       
     }
 }
 
