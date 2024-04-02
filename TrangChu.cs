@@ -57,6 +57,7 @@ namespace quanLyShop
             if(currentFormChild!= null)
                 currentFormChild.Close();
             DoimauBtn(btn);
+            
         }
 
         private void btnSanPham_Click(object sender, EventArgs e)
@@ -78,6 +79,6 @@ namespace quanLyShop
             btnTrangChu_Click(btnTrangChu, new EventArgs());
         }
 
-     
+       
     }
 }

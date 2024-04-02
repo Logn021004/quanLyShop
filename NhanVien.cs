@@ -192,7 +192,11 @@ namespace quanLyShop
             }
         }
 
-       
+        private void caLàmViệcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CaLamViec form = new CaLamViec();
+            form.ShowDialog();
+        }
     }
 }
 

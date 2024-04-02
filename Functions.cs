@@ -24,7 +24,6 @@ namespace quanLyShop
                 return instance; }
             //set { instance = value; }
         }
-
         private Functions()
         {
 
@@ -32,6 +31,7 @@ namespace quanLyShop
 
             
         string connectionString = @"Data Source=LONG-PC;Initial Catalog=QlyShop;Integrated Security=True";
+ 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();

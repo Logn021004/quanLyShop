@@ -46,16 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="caLamViec.cs">
+    <Compile Include="CaLamViec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="caLamViec.Designer.cs">
-      <DependentUpon>caLamViec.cs</DependentUpon>
+    <Compile Include="CaLamViec.Designer.cs">
+      <DependentUpon>CaLamViec.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions.cs" />
     <Compile Include="NhanvienBUS.cs" />
     <Compile Include="NhanvienDAO.cs" />
     <Compile Include="NhanvienDTO.cs" />
+    <Compile Include="PhanCongBUS.cs" />
+    <Compile Include="PhanCongDAO.cs" />
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,8 +78,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="caLamViec.resx">
-      <DependentUpon>caLamViec.cs</DependentUpon>
+    <EmbeddedResource Include="CaLamViec.resx">
+      <DependentUpon>CaLamViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>

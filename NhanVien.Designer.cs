@@ -382,7 +382,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -442,6 +442,7 @@
             this.caLàmViệcToolStripMenuItem.Name = "caLàmViệcToolStripMenuItem";
             this.caLàmViệcToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
             this.caLàmViệcToolStripMenuItem.Text = "Ca làm việc";
+            this.caLàmViệcToolStripMenuItem.Click += new System.EventHandler(this.caLàmViệcToolStripMenuItem_Click);
             // 
             // NhanVien
             // 
