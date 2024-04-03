@@ -194,8 +194,14 @@ namespace quanLyShop
 
         private void caLàmViệcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CaLamViec form = new CaLamViec();
+            PhanCong form = new PhanCong();
             form.ShowDialog();
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            danhSáchNhânViênToolStripMenuItem_Click(sender,e);
+            AnHienbtnSaveAndClose();
         }
     }
 }

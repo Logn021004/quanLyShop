@@ -66,7 +66,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.viPhamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chấmCôngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.caLàmViệcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phanCongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNhanVien)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -138,6 +138,7 @@
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Visible = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // cboTrangThai
             // 
@@ -389,7 +390,7 @@
             this.xemDanhSáchToolStripMenuItem,
             this.viPhamToolStripMenuItem,
             this.chấmCôngToolStripMenuItem,
-            this.caLàmViệcToolStripMenuItem});
+            this.phanCongToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1277, 28);
@@ -437,12 +438,12 @@
             this.chấmCôngToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.chấmCôngToolStripMenuItem.Text = "Chấm công";
             // 
-            // caLàmViệcToolStripMenuItem
+            // phanCongToolStripMenuItem
             // 
-            this.caLàmViệcToolStripMenuItem.Name = "caLàmViệcToolStripMenuItem";
-            this.caLàmViệcToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
-            this.caLàmViệcToolStripMenuItem.Text = "Ca làm việc";
-            this.caLàmViệcToolStripMenuItem.Click += new System.EventHandler(this.caLàmViệcToolStripMenuItem_Click);
+            this.phanCongToolStripMenuItem.Name = "phanCongToolStripMenuItem";
+            this.phanCongToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
+            this.phanCongToolStripMenuItem.Text = "Phân Công";
+            this.phanCongToolStripMenuItem.Click += new System.EventHandler(this.caLàmViệcToolStripMenuItem_Click);
             // 
             // NhanVien
             // 
@@ -512,6 +513,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem viPhamToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chấmCôngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem caLàmViệcToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem phanCongToolStripMenuItem;
     }
 }

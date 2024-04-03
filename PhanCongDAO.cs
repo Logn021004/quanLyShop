@@ -40,7 +40,7 @@ namespace quanLyShop
             using (SqlConnection connection = new SqlConnection(connectionString))//de phong truong hop ngắt kết nối bất chợp đảm bảo data
             {
                 connection.Open();
-                string query = "select TENCA from CALAM";
+                string query = "select TENCA from CALAM\r\norder by THOIGIANKETTHUC asc";
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataReader sdr = command.ExecuteReader();
                 while (sdr.Read())
@@ -70,6 +70,32 @@ namespace quanLyShop
             }
             return time;
 
+        }
+        public bool ThemCa(string txtAddCa,string timeBD,string timeKT)
+        {
+            string query = "insert into CALAM values( @TENCA , @TIMEBD , @TIMEKT )";
+            object[] para = new object[] { txtAddCa, timeBD, timeKT };
+            if (checkCaTonTai(txtAddCa))
+                return false;
+            if (Functions.Instance.ExecuteNonQuery(query, para) > 0)
+                return true;
+            return false;
+        }
+        public bool SuaCa(string txtAddCa, string timeBD, string timeKT)
+        {
+            string query = "update CALAM set THOIGIANBDLAM= @timeBD ,THOIGIANKETTHUC= @timeKT where TENCA= @TENCA ";
+            object[] para = new object[] { timeBD, timeKT,txtAddCa };
+            if (Functions.Instance.ExecuteNonQuery(query, para) > 0)
+                return true;
+            return false;
+        }
+        public bool checkCaTonTai(string tenca)
+        {
+            string query = "select TENCA from CALAM where TENCA= @TENCA ";
+            object[] para = new object[] { tenca };
+            if (Functions.Instance.ExecuteQuery(query, para).Rows.Count > 0)
+                return true;
+            return false;
         }
 
     }

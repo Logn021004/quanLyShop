@@ -1,6 +1,6 @@
 ﻿namespace quanLyShop
 {
-    partial class CaLamViec
+    partial class PhanCong
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,9 @@
         {
             this.dtgvcaLamViec = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCloseAddCa = new System.Windows.Forms.Button();
+            this.btnSaveCa = new System.Windows.Forms.Button();
+            this.txtAddCa = new System.Windows.Forms.TextBox();
             this.cbotenCa = new System.Windows.Forms.ComboBox();
             this.txtMoTa = new System.Windows.Forms.RichTextBox();
             this.dateNgayLam = new System.Windows.Forms.DateTimePicker();
@@ -70,6 +73,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCloseAddCa);
+            this.groupBox1.Controls.Add(this.btnSaveCa);
+            this.groupBox1.Controls.Add(this.txtAddCa);
             this.groupBox1.Controls.Add(this.cbotenCa);
             this.groupBox1.Controls.Add(this.txtMoTa);
             this.groupBox1.Controls.Add(this.dateNgayLam);
@@ -89,10 +95,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
             // 
+            // btnCloseAddCa
+            // 
+            this.btnCloseAddCa.Location = new System.Drawing.Point(204, 81);
+            this.btnCloseAddCa.Name = "btnCloseAddCa";
+            this.btnCloseAddCa.Size = new System.Drawing.Size(73, 37);
+            this.btnCloseAddCa.TabIndex = 6;
+            this.btnCloseAddCa.Text = "Hủy";
+            this.btnCloseAddCa.UseVisualStyleBackColor = true;
+            this.btnCloseAddCa.Visible = false;
+            // 
+            // btnSaveCa
+            // 
+            this.btnSaveCa.Location = new System.Drawing.Point(112, 81);
+            this.btnSaveCa.Name = "btnSaveCa";
+            this.btnSaveCa.Size = new System.Drawing.Size(73, 37);
+            this.btnSaveCa.TabIndex = 6;
+            this.btnSaveCa.Text = "Áp dụng";
+            this.btnSaveCa.UseVisualStyleBackColor = true;
+            this.btnSaveCa.Visible = false;
+            this.btnSaveCa.Click += new System.EventHandler(this.btnSaveCa_Click);
+            // 
+            // txtAddCa
+            // 
+            this.txtAddCa.Location = new System.Drawing.Point(112, 45);
+            this.txtAddCa.Name = "txtAddCa";
+            this.txtAddCa.Size = new System.Drawing.Size(165, 22);
+            this.txtAddCa.TabIndex = 5;
+            this.txtAddCa.Visible = false;
+            // 
             // cbotenCa
             // 
             this.cbotenCa.FormattingEnabled = true;
-            this.cbotenCa.Location = new System.Drawing.Point(112, 42);
+            this.cbotenCa.Location = new System.Drawing.Point(112, 45);
             this.cbotenCa.Name = "cbotenCa";
             this.cbotenCa.Size = new System.Drawing.Size(165, 24);
             this.cbotenCa.TabIndex = 4;
@@ -133,6 +168,7 @@
             this.txtTimeBD.Name = "txtTimeBD";
             this.txtTimeBD.Size = new System.Drawing.Size(122, 22);
             this.txtTimeBD.TabIndex = 1;
+            this.txtTimeBD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTimeBD_KeyPress);
             // 
             // label7
             // 
@@ -226,6 +262,7 @@
             this.btnSuaPC.TabIndex = 2;
             this.btnSuaPC.Text = "Sửa Phân Công";
             this.btnSuaPC.UseVisualStyleBackColor = false;
+            this.btnSuaPC.Click += new System.EventHandler(this.btnSuaPC_Click);
             // 
             // btnThemCa
             // 
@@ -302,7 +339,7 @@
             this.danhSáchPhânCôngToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
             this.danhSáchPhânCôngToolStripMenuItem.Text = "Danh sách phân công";
             // 
-            // CaLamViec
+            // PhanCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -318,8 +355,8 @@
             this.Controls.Add(this.dtgvcaLamViec);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "CaLamViec";
-            this.Text = "Ca làm việc";
+            this.Name = "PhanCong";
+            this.Text = "Phân Công";
             this.Load += new System.EventHandler(this.CaLamViec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvcaLamViec)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -358,5 +395,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem danhSáchPhânCôngToolStripMenuItem;
         private System.Windows.Forms.ComboBox cbotenCa;
+        private System.Windows.Forms.Button btnCloseAddCa;
+        private System.Windows.Forms.Button btnSaveCa;
+        private System.Windows.Forms.TextBox txtAddCa;
     }
 }
