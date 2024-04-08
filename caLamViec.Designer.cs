@@ -1,6 +1,6 @@
 ﻿namespace quanLyShop
 {
-    partial class PhanCong
+    partial class PhanCongform
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,15 @@
         {
             this.dtgvcaLamViec = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboNV = new System.Windows.Forms.ComboBox();
+            this.btnCloseAddPC = new System.Windows.Forms.Button();
+            this.btnSaveAddPC = new System.Windows.Forms.Button();
             this.btnCloseAddCa = new System.Windows.Forms.Button();
             this.btnSaveCa = new System.Windows.Forms.Button();
             this.txtAddCa = new System.Windows.Forms.TextBox();
             this.cbotenCa = new System.Windows.Forms.ComboBox();
             this.txtMoTa = new System.Windows.Forms.RichTextBox();
             this.dateNgayLam = new System.Windows.Forms.DateTimePicker();
-            this.txtNhanVien = new System.Windows.Forms.TextBox();
             this.txtTimeKT = new System.Windows.Forms.TextBox();
             this.txtTimeBD = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -70,16 +72,19 @@
             this.dtgvcaLamViec.RowTemplate.Height = 24;
             this.dtgvcaLamViec.Size = new System.Drawing.Size(1147, 309);
             this.dtgvcaLamViec.TabIndex = 0;
+            this.dtgvcaLamViec.SelectionChanged += new System.EventHandler(this.dtgvcaLamViec_SelectionChanged);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboNV);
+            this.groupBox1.Controls.Add(this.btnCloseAddPC);
+            this.groupBox1.Controls.Add(this.btnSaveAddPC);
             this.groupBox1.Controls.Add(this.btnCloseAddCa);
             this.groupBox1.Controls.Add(this.btnSaveCa);
             this.groupBox1.Controls.Add(this.txtAddCa);
             this.groupBox1.Controls.Add(this.cbotenCa);
             this.groupBox1.Controls.Add(this.txtMoTa);
             this.groupBox1.Controls.Add(this.dateNgayLam);
-            this.groupBox1.Controls.Add(this.txtNhanVien);
             this.groupBox1.Controls.Add(this.txtTimeKT);
             this.groupBox1.Controls.Add(this.txtTimeBD);
             this.groupBox1.Controls.Add(this.label7);
@@ -95,6 +100,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
             // 
+            // cboNV
+            // 
+            this.cboNV.FormattingEnabled = true;
+            this.cboNV.Location = new System.Drawing.Point(112, 136);
+            this.cboNV.Name = "cboNV";
+            this.cboNV.Size = new System.Drawing.Size(163, 24);
+            this.cboNV.TabIndex = 8;
+            // 
+            // btnCloseAddPC
+            // 
+            this.btnCloseAddPC.Location = new System.Drawing.Point(567, 82);
+            this.btnCloseAddPC.Name = "btnCloseAddPC";
+            this.btnCloseAddPC.Size = new System.Drawing.Size(74, 39);
+            this.btnCloseAddPC.TabIndex = 7;
+            this.btnCloseAddPC.Text = "Hủy";
+            this.btnCloseAddPC.UseVisualStyleBackColor = true;
+            this.btnCloseAddPC.Visible = false;
+            this.btnCloseAddPC.Click += new System.EventHandler(this.btnCloseAddPC_Click);
+            // 
+            // btnSaveAddPC
+            // 
+            this.btnSaveAddPC.Location = new System.Drawing.Point(567, 37);
+            this.btnSaveAddPC.Name = "btnSaveAddPC";
+            this.btnSaveAddPC.Size = new System.Drawing.Size(74, 39);
+            this.btnSaveAddPC.TabIndex = 7;
+            this.btnSaveAddPC.Text = "Lưu ";
+            this.btnSaveAddPC.UseVisualStyleBackColor = true;
+            this.btnSaveAddPC.Visible = false;
+            this.btnSaveAddPC.Click += new System.EventHandler(this.btnSaveAddPC_Click);
+            // 
             // btnCloseAddCa
             // 
             this.btnCloseAddCa.Location = new System.Drawing.Point(204, 81);
@@ -104,6 +139,7 @@
             this.btnCloseAddCa.Text = "Hủy";
             this.btnCloseAddCa.UseVisualStyleBackColor = true;
             this.btnCloseAddCa.Visible = false;
+            this.btnCloseAddCa.Click += new System.EventHandler(this.btnCloseAddCa_Click);
             // 
             // btnSaveCa
             // 
@@ -143,17 +179,12 @@
             // 
             // dateNgayLam
             // 
-            this.dateNgayLam.Location = new System.Drawing.Point(393, 136);
+            this.dateNgayLam.CustomFormat = "dd/MM/yyyy";
+            this.dateNgayLam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateNgayLam.Location = new System.Drawing.Point(439, 131);
             this.dateNgayLam.Name = "dateNgayLam";
-            this.dateNgayLam.Size = new System.Drawing.Size(250, 22);
+            this.dateNgayLam.Size = new System.Drawing.Size(149, 22);
             this.dateNgayLam.TabIndex = 2;
-            // 
-            // txtNhanVien
-            // 
-            this.txtNhanVien.Location = new System.Drawing.Point(112, 135);
-            this.txtNhanVien.Name = "txtNhanVien";
-            this.txtNhanVien.Size = new System.Drawing.Size(137, 22);
-            this.txtNhanVien.TabIndex = 1;
             // 
             // txtTimeKT
             // 
@@ -173,7 +204,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(294, 142);
+            this.label7.Location = new System.Drawing.Point(294, 137);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 16);
             this.label7.TabIndex = 0;
@@ -275,6 +306,7 @@
             this.btnThemCa.TabIndex = 2;
             this.btnThemCa.Text = "Thêm Ca Làm";
             this.btnThemCa.UseVisualStyleBackColor = false;
+            this.btnThemCa.Click += new System.EventHandler(this.btnThemCa_Click);
             // 
             // btnXoaCa
             // 
@@ -287,6 +319,7 @@
             this.btnXoaCa.TabIndex = 2;
             this.btnXoaCa.Text = "Xóa Ca Làm";
             this.btnXoaCa.UseVisualStyleBackColor = false;
+            this.btnXoaCa.Click += new System.EventHandler(this.btnXoaCa_Click);
             // 
             // btnSuaCa
             // 
@@ -299,6 +332,7 @@
             this.btnSuaCa.TabIndex = 2;
             this.btnSuaCa.Text = "Sửa Ca Làm";
             this.btnSuaCa.UseVisualStyleBackColor = false;
+            this.btnSuaCa.Click += new System.EventHandler(this.btnSuaCa_Click);
             // 
             // menuStrip1
             // 
@@ -338,8 +372,9 @@
             this.danhSáchPhânCôngToolStripMenuItem.Name = "danhSáchPhânCôngToolStripMenuItem";
             this.danhSáchPhânCôngToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
             this.danhSáchPhânCôngToolStripMenuItem.Text = "Danh sách phân công";
+            this.danhSáchPhânCôngToolStripMenuItem.Click += new System.EventHandler(this.danhSáchPhânCôngToolStripMenuItem_Click);
             // 
-            // PhanCong
+            // PhanCongform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -355,7 +390,7 @@
             this.Controls.Add(this.dtgvcaLamViec);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "PhanCong";
+            this.Name = "PhanCongform";
             this.Text = "Phân Công";
             this.Load += new System.EventHandler(this.CaLamViec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvcaLamViec)).EndInit();
@@ -378,7 +413,6 @@
         private System.Windows.Forms.Button btnThemCa;
         private System.Windows.Forms.Button btnXoaCa;
         private System.Windows.Forms.Button btnSuaCa;
-        private System.Windows.Forms.TextBox txtNhanVien;
         private System.Windows.Forms.TextBox txtTimeKT;
         private System.Windows.Forms.TextBox txtTimeBD;
         private System.Windows.Forms.Label label7;
@@ -398,5 +432,8 @@
         private System.Windows.Forms.Button btnCloseAddCa;
         private System.Windows.Forms.Button btnSaveCa;
         private System.Windows.Forms.TextBox txtAddCa;
+        private System.Windows.Forms.Button btnCloseAddPC;
+        private System.Windows.Forms.Button btnSaveAddPC;
+        private System.Windows.Forms.ComboBox cboNV;
     }
 }

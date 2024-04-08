@@ -58,6 +58,7 @@
     <Compile Include="NhanvienDTO.cs" />
     <Compile Include="PhanCongBUS.cs" />
     <Compile Include="PhanCongDAO.cs" />
+    <Compile Include="PhanCongDTO.cs" />
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>

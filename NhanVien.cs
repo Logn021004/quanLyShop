@@ -194,7 +194,7 @@ namespace quanLyShop
 
         private void caLàmViệcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PhanCong form = new PhanCong();
+            PhanCongform form = new PhanCongform();
             form.ShowDialog();
         }
 
