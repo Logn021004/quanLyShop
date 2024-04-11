@@ -12,3 +12,4 @@ D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.TrangChu.resources
 D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.SanPham.resources
 D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.NhanVien.resources
 D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.PhanCongform.resources
+D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.ItemSP.resources

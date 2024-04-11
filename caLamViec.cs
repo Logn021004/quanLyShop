@@ -250,5 +250,10 @@ namespace quanLyShop
         {
 
         }
+
+        private void danhSáchCaLàmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PhanCongBUS.Instance.DSCa(dtgvcaLamViec);
+        }
     }
 }

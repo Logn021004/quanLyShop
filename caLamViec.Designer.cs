@@ -58,9 +58,18 @@
             this.danhSáchCaLàmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.danhSáchPhânCôngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvcaLamViec)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgvcaLamViec
@@ -260,7 +269,7 @@
             this.btnThemPC.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnThemPC.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnThemPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemPC.Location = new System.Drawing.Point(12, 78);
+            this.btnThemPC.Location = new System.Drawing.Point(12, 48);
             this.btnThemPC.Name = "btnThemPC";
             this.btnThemPC.Size = new System.Drawing.Size(153, 99);
             this.btnThemPC.TabIndex = 2;
@@ -274,7 +283,7 @@
             this.btnXoaPC.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnXoaPC.FlatAppearance.BorderSize = 0;
             this.btnXoaPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaPC.Location = new System.Drawing.Point(171, 78);
+            this.btnXoaPC.Location = new System.Drawing.Point(171, 48);
             this.btnXoaPC.Name = "btnXoaPC";
             this.btnXoaPC.Size = new System.Drawing.Size(153, 99);
             this.btnXoaPC.TabIndex = 2;
@@ -287,7 +296,7 @@
             this.btnSuaPC.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSuaPC.FlatAppearance.BorderSize = 0;
             this.btnSuaPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaPC.Location = new System.Drawing.Point(330, 78);
+            this.btnSuaPC.Location = new System.Drawing.Point(330, 52);
             this.btnSuaPC.Name = "btnSuaPC";
             this.btnSuaPC.Size = new System.Drawing.Size(153, 99);
             this.btnSuaPC.TabIndex = 2;
@@ -300,9 +309,9 @@
             this.btnThemCa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnThemCa.FlatAppearance.BorderSize = 0;
             this.btnThemCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemCa.Location = new System.Drawing.Point(12, 183);
+            this.btnThemCa.Location = new System.Drawing.Point(12, 157);
             this.btnThemCa.Name = "btnThemCa";
-            this.btnThemCa.Size = new System.Drawing.Size(153, 99);
+            this.btnThemCa.Size = new System.Drawing.Size(153, 51);
             this.btnThemCa.TabIndex = 2;
             this.btnThemCa.Text = "Thêm Ca Làm";
             this.btnThemCa.UseVisualStyleBackColor = false;
@@ -313,9 +322,9 @@
             this.btnXoaCa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnXoaCa.FlatAppearance.BorderSize = 0;
             this.btnXoaCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaCa.Location = new System.Drawing.Point(171, 183);
+            this.btnXoaCa.Location = new System.Drawing.Point(171, 157);
             this.btnXoaCa.Name = "btnXoaCa";
-            this.btnXoaCa.Size = new System.Drawing.Size(153, 99);
+            this.btnXoaCa.Size = new System.Drawing.Size(153, 51);
             this.btnXoaCa.TabIndex = 2;
             this.btnXoaCa.Text = "Xóa Ca Làm";
             this.btnXoaCa.UseVisualStyleBackColor = false;
@@ -326,9 +335,9 @@
             this.btnSuaCa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSuaCa.FlatAppearance.BorderSize = 0;
             this.btnSuaCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaCa.Location = new System.Drawing.Point(330, 183);
+            this.btnSuaCa.Location = new System.Drawing.Point(330, 157);
             this.btnSuaCa.Name = "btnSuaCa";
-            this.btnSuaCa.Size = new System.Drawing.Size(153, 99);
+            this.btnSuaCa.Size = new System.Drawing.Size(153, 51);
             this.btnSuaCa.TabIndex = 2;
             this.btnSuaCa.Text = "Sửa Ca Làm";
             this.btnSuaCa.UseVisualStyleBackColor = false;
@@ -361,6 +370,7 @@
             this.danhSáchCaLàmToolStripMenuItem.Name = "danhSáchCaLàmToolStripMenuItem";
             this.danhSáchCaLàmToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
             this.danhSáchCaLàmToolStripMenuItem.Text = "Danh sách ca làm";
+            this.danhSáchCaLàmToolStripMenuItem.Click += new System.EventHandler(this.danhSáchCaLàmToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -374,12 +384,88 @@
             this.danhSáchPhânCôngToolStripMenuItem.Text = "Danh sách phân công";
             this.danhSáchPhânCôngToolStripMenuItem.Click += new System.EventHandler(this.danhSáchPhânCôngToolStripMenuItem_Click);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(12, 280);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(76, 24);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "Tìm Kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(104, 25);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(97, 22);
+            this.textBox1.TabIndex = 5;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Location = new System.Drawing.Point(94, 214);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(388, 101);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Bộ lọc";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(104, 64);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(108, 22);
+            this.dateTimePicker1.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(266, 25);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(116, 22);
+            this.textBox2.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 16);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Tên nhân viên";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 70);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 16);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Ngày làm";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(217, 28);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(24, 16);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Ca";
+            // 
             // PhanCongform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1171, 643);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnXoaCa);
             this.Controls.Add(this.btnSuaPC);
             this.Controls.Add(this.btnSuaCa);
@@ -398,6 +484,8 @@
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,5 +523,13 @@
         private System.Windows.Forms.Button btnCloseAddPC;
         private System.Windows.Forms.Button btnSaveAddPC;
         private System.Windows.Forms.ComboBox cboNV;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

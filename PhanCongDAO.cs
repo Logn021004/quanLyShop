@@ -98,6 +98,24 @@ namespace quanLyShop
                 return true;
             return false;
         }
+        public bool xoaCa(int maCa)
+        {
+            string query = "EXEC XOACA @MACA ";
+            object[] para = new object[] { maCa };
+            if (Functions.Instance.ExecuteNonQuery(query, para) > 0)
+                return true;
+            return false;
+        }
+        public bool SuaCa(string txtAddCa, string timeBD, string timeKT)
+        {
+            string query = "update CALAM set THOIGIANBDLAM= @timeBD ,THOIGIANKETTHUC= @timeKT where TENCA= @TENCA ";
+            object[] para = new object[] { timeBD, timeKT, txtAddCa };
+            if (Functions.Instance.ExecuteNonQuery(query, para) > 0)
+                return true;
+            return false;
+        }
+
+
         public bool ThemPC(PhanCongDTO user,string tenca) 
         {
             string query = "insert into PHANCONG values( @MACA , @MANV , @NGAYLAM , @MOTA )";
@@ -107,23 +125,7 @@ namespace quanLyShop
             if (Functions.Instance.ExecuteNonQuery(query, para) > 0)
                 return true;
             return false;              
-        }
-        public bool SuaCa(string txtAddCa, string timeBD, string timeKT)
-        {
-            string query = "update CALAM set THOIGIANBDLAM= @timeBD ,THOIGIANKETTHUC= @timeKT where TENCA= @TENCA ";
-            object[] para = new object[] { timeBD, timeKT,txtAddCa };
-            if (Functions.Instance.ExecuteNonQuery(query, para) > 0)
-                return true;
-            return false;
-        }
-        public bool xoaCa(int maCa)
-        {
-            string query = "EXEC XOACA @MACA ";
-            object[] para = new object[] { maCa };
-            if (Functions.Instance.ExecuteNonQuery(query, para) > 0)
-                return true;
-            return false;
-        }
+        }       
         public bool SuaPC(PhanCongDTO user)
         {
             string query = "update PHANCONG set  NGAYLAMVIEC= @NGAYLAMVIEC ,MOTA= @MOTA where  MANV= @MANV and MACA= @MACA ";
@@ -156,6 +158,11 @@ namespace quanLyShop
             string query = "select ca.TENCA as N'Ca làm',nv.TENNV as N'Tên nhân viên',pc.NGAYLAMVIEC as N'Ngày làm việc',pc.MOTA as N'Mô tả' from PHANCONG as pc,CALAM as ca,NHANVIEN as nv where ca.MACA=pc.MACA and pc.MANV =  nv.MANV\r\n";
             return Functions.Instance.ExecuteQuery(query);
 
+        }
+        public DataTable DSCa()
+        {
+            string query = "select TENCA as N'Tên ca',THOIGIANBDLAM as N'Thời gian bắt đầu',THOIGIANKETTHUC as N'Thời gian kết thúc' from CALAM\r\n";
+            return Functions.Instance.ExecuteQuery(query);
         }
 
     }

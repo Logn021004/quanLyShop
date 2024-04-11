@@ -53,12 +53,20 @@
       <DependentUpon>CaLamViec.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions.cs" />
+    <Compile Include="ItemSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemSP.Designer.cs">
+      <DependentUpon>ItemSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanvienBUS.cs" />
     <Compile Include="NhanvienDAO.cs" />
     <Compile Include="NhanvienDTO.cs" />
     <Compile Include="PhanCongBUS.cs" />
     <Compile Include="PhanCongDAO.cs" />
     <Compile Include="PhanCongDTO.cs" />
+    <Compile Include="SanPhamBUS.cs" />
+    <Compile Include="SanPhamDAO.cs" />
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CaLamViec.resx">
       <DependentUpon>CaLamViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemSP.resx">
+      <DependentUpon>ItemSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>

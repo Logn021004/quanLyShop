@@ -145,6 +145,10 @@ namespace quanLyShop
         {
             dt.DataSource = PhanCongDAO.Instance.DSPhanCong();
         }
+        public void DSCa(DataGridView dt)
+        {
+            dt.DataSource = PhanCongDAO.Instance.DSCa();
+        }
         public bool themPC(string nameNV,string tenca,DateTimePicker ngaylam,RichTextBox moTa)
         {
             int MaCA=0, MaNV=0;

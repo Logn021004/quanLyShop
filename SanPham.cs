@@ -21,6 +21,11 @@ namespace quanLyShop
 
         private void SanPham_Load(object sender, EventArgs e)
         {
+            SanPhamBUS.Instance.Xem(flowLayoutPanelSP);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
 
         }
     }
