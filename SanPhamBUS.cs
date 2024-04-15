@@ -43,6 +43,62 @@ namespace quanLyShop
             }
            // return dssp;
         }
+        public void Search(FlowLayoutPanel dsSearch,string tensp,string tenloai,string tenncc)
+        {
+            dsSearch.Controls.Clear();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string maloai = "", mancc = "";
+                string query = "";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader sdr;
+                if (tenloai!="Chọn loại")
+                {
+                     query = "select * from LOAI where TENLOAI= @TENLOAI\r\n";
+                     cmd = new SqlCommand(query, conn);
+                     cmd.Parameters.AddWithValue("@TENLOAI", tenloai);
+                     sdr = cmd.ExecuteReader();
+                    while (sdr.Read())
+                        maloai = sdr[0].ToString();
+                    sdr.Close();
+                }
+                if (tenncc != "Chọn nhà cung cấp")
+                {
+                    query = "select * from NHACUNGCAP where TENNCC= @TENNCC ";
+                    cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@TENNCC", tenncc);
+                    sdr = cmd.ExecuteReader();
+                    while (sdr.Read())
+                        mancc = sdr[0].ToString();
+                    sdr.Close();
+                }
+                query = "select MASP,TENSP,IMG,DONGIABAN,SOLUONGTONKHO from SANPHAM\r\nwhere 1=1 ";
+                if (!string.IsNullOrEmpty(tensp))
+                {
+                    query += "AND TENSP like N'%" + tensp+"%'";
+                }
+                if (maloai != "")
+                {
+                    query += " AND LOAI='" + maloai+"'";
+                }
+                if (mancc != "")
+                {
+                    query += " AND MANCC='" + mancc + "'";
+                }
+                cmd = new SqlCommand(query, conn);
+                sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    int giamgia = tiengiamgia(sdr[0].ToString());
+                    ItemSP itemsp = new ItemSP() { TenSP = sdr[1].ToString(), PathImg = sdr[2].ToString(), Giamgia = giamgia, Gia = int.Parse(sdr[3].ToString()), Soluong = int.Parse(sdr[4].ToString()) };
+                    itemsp.Tag = sdr[0].ToString();
+                    itemsp.setMoney();
+                    dsSearch.Controls.Add(itemsp);
+                }
+                conn.Close();
+            }
+        }
         public int tiengiamgia(string MASP)
         {
             int money = 0;
@@ -64,9 +120,43 @@ namespace quanLyShop
             }
             return money;
         }
+        public void dsSize(ListView dsSie,string maSP)
+        {
+            dsSie.Items.Clear();
+            ListView dsTemp = SanPhamDAO.Instance.DSSize(maSP);
+            foreach(ListViewItem item in dsTemp.Items)
+            {
+                ListViewItem newItem=new ListViewItem(item.Text);
 
+                foreach (ListViewItem.ListViewSubItem subitem in item.SubItems)
+                {   
+                    if ( subitem.Text!=item.Text)
+                    newItem.SubItems.Add(subitem.Text); 
+                }
+                dsSie.Items.Add(newItem);
+            }
+        }
 
-
+        public void dsLoai(ComboBox cbodsLoai)
+        {
+            cbodsLoai.Items.Clear();
+            cbodsLoai.Items.Add("Chọn loại");
+            foreach(var item in SanPhamDAO.Instance.dsLoai().Items)
+            {
+                cbodsLoai.Items.Add(item);
+            }
+            cbodsLoai.SelectedIndex = 0;
+        }
+        public void dsNCC(ComboBox cbodsNCC)
+        {
+            cbodsNCC.Items.Clear();
+            cbodsNCC.Items.Add("Chọn nhà cung cấp");
+            foreach (var item in SanPhamDAO.Instance.dsNCC().Items)
+            {
+                cbodsNCC.Items.Add(item);
+            }
+            cbodsNCC.SelectedIndex = 0;
+        }
 
     }
 }

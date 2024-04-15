@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace quanLyShop
 {
@@ -96,6 +97,18 @@ namespace quanLyShop
         private void lblGia_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ItemSP_MouseHover(object sender, EventArgs e)
+        {
+            ItemSP item = (ItemSP)sender;
+            item.BackColor = Color.White;
+        }
+
+        private void ItemSP_MouseLeave(object sender, EventArgs e)
+        {
+            ItemSP item = (ItemSP)sender;
+            item.BackColor = SystemColors.GradientInactiveCaption;
         }
     }
 }

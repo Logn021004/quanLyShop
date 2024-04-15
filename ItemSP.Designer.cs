@@ -39,16 +39,16 @@
             // 
             this.pnlPic.Location = new System.Drawing.Point(0, 0);
             this.pnlPic.Name = "pnlPic";
-            this.pnlPic.Size = new System.Drawing.Size(213, 131);
+            this.pnlPic.Size = new System.Drawing.Size(213, 134);
             this.pnlPic.TabIndex = 0;
             // 
             // lblTenSP
             // 
             this.lblTenSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenSP.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lblTenSP.Location = new System.Drawing.Point(3, 134);
+            this.lblTenSP.Location = new System.Drawing.Point(5, 137);
             this.lblTenSP.Name = "lblTenSP";
-            this.lblTenSP.Size = new System.Drawing.Size(207, 34);
+            this.lblTenSP.Size = new System.Drawing.Size(207, 40);
             this.lblTenSP.TabIndex = 1;
             this.lblTenSP.Text = "Áo Sơ Mi Vải Lanh Cotton Tay Dài Dáng Rộng Cổ Đứng Cài Khóa Kiểu Trung Hoa Thời T" +
     "rang Xuân Hè 2023 5UFB Cho Nam";
@@ -57,9 +57,9 @@
             // 
             this.lblGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGia.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lblGia.Location = new System.Drawing.Point(1, 177);
+            this.lblGia.Location = new System.Drawing.Point(3, 177);
             this.lblGia.Name = "lblGia";
-            this.lblGia.Size = new System.Drawing.Size(183, 31);
+            this.lblGia.Size = new System.Drawing.Size(163, 31);
             this.lblGia.TabIndex = 2;
             this.lblGia.Text = "Gía";
             this.lblGia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -67,7 +67,7 @@
             // 
             // lblSoLuong
             // 
-            this.lblSoLuong.Location = new System.Drawing.Point(108, 211);
+            this.lblSoLuong.Location = new System.Drawing.Point(111, 250);
             this.lblSoLuong.Name = "lblSoLuong";
             this.lblSoLuong.Size = new System.Drawing.Size(102, 22);
             this.lblSoLuong.TabIndex = 3;
@@ -79,7 +79,7 @@
             this.lblGiamGia.AutoSize = true;
             this.lblGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGiamGia.ForeColor = System.Drawing.Color.Gray;
-            this.lblGiamGia.Location = new System.Drawing.Point(3, 208);
+            this.lblGiamGia.Location = new System.Drawing.Point(3, 246);
             this.lblGiamGia.Name = "lblGiamGia";
             this.lblGiamGia.Size = new System.Drawing.Size(77, 25);
             this.lblGiamGia.TabIndex = 4;
@@ -96,9 +96,12 @@
             this.Controls.Add(this.lblGia);
             this.Controls.Add(this.lblTenSP);
             this.Controls.Add(this.pnlPic);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "ItemSP";
-            this.Size = new System.Drawing.Size(213, 242);
+            this.Size = new System.Drawing.Size(213, 272);
             this.Load += new System.EventHandler(this.ItemSP_Load);
+            this.MouseLeave += new System.EventHandler(this.ItemSP_MouseLeave);
+            this.MouseHover += new System.EventHandler(this.ItemSP_MouseHover);
             this.ResumeLayout(false);
             this.PerformLayout();
 

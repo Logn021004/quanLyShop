@@ -69,5 +69,63 @@ namespace quanLyShop
             }
             return money;
         }
+
+        public ListView DSSize(string maSP)
+        {
+            ListView dssize = new ListView();
+            using (SqlConnection conn=new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "select SIZE,SIZESP.SOLUONGTONKHO from SIZESP,SANPHAM where SIZESP.MASP=SANPHAM.MASP and SANPHAM.MASP= @MASP \r\n";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MASP", maSP);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    ListViewItem item = new ListViewItem();
+                    item.Text =sdr[0].ToString();
+
+                    ListViewItem.ListViewSubItem subitem = new ListViewItem.ListViewSubItem(item,sdr[1].ToString());
+                    item.SubItems.Add(subitem);
+
+                    dssize.Items.Add(item);
+                }
+            }
+            return dssize;
+        }
+        public ComboBox dsLoai()
+        {
+            ComboBox dsloai = new ComboBox();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "select * from LOAI";
+                SqlCommand cmd=new SqlCommand(query,conn);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    dsloai.Items.Add(sdr[1].ToString());
+                }
+                conn.Close();
+            }
+            return dsloai;
+        }
+        public ComboBox dsNCC()
+        {
+            ComboBox dsncc = new ComboBox();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "select * from NHACUNGCAP\r\n";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    dsncc.Items.Add(sdr[1].ToString());
+                }
+                conn.Close();
+            }
+            return dsncc;
+        }
     }
 }
