@@ -30,7 +30,7 @@
         {
             this.flowLayoutPanelSP = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblncc = new System.Windows.Forms.Label();
             this.lblTrangThai = new System.Windows.Forms.Label();
             this.lblLoai = new System.Windows.Forms.Label();
             this.lblGia = new System.Windows.Forms.Label();
@@ -69,6 +69,9 @@
             this.SoLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel9 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,7 +93,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.lblncc);
             this.groupBox1.Controls.Add(this.lblTrangThai);
             this.groupBox1.Controls.Add(this.lblLoai);
             this.groupBox1.Controls.Add(this.lblGia);
@@ -111,67 +114,61 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết sản phẩm";
             // 
-            // label14
+            // lblncc
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(160, 70);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 16);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "label14";
+            this.lblncc.AutoSize = true;
+            this.lblncc.Location = new System.Drawing.Point(160, 70);
+            this.lblncc.Name = "lblncc";
+            this.lblncc.Size = new System.Drawing.Size(0, 16);
+            this.lblncc.TabIndex = 9;
             // 
             // lblTrangThai
             // 
             this.lblTrangThai.AutoSize = true;
             this.lblTrangThai.Location = new System.Drawing.Point(160, 229);
             this.lblTrangThai.Name = "lblTrangThai";
-            this.lblTrangThai.Size = new System.Drawing.Size(51, 16);
+            this.lblTrangThai.Size = new System.Drawing.Size(0, 16);
             this.lblTrangThai.TabIndex = 8;
-            this.lblTrangThai.Text = "label18";
             // 
             // lblLoai
             // 
             this.lblLoai.AutoSize = true;
             this.lblLoai.Location = new System.Drawing.Point(160, 189);
             this.lblLoai.Name = "lblLoai";
-            this.lblLoai.Size = new System.Drawing.Size(51, 16);
+            this.lblLoai.Size = new System.Drawing.Size(0, 16);
             this.lblLoai.TabIndex = 7;
-            this.lblLoai.Text = "label17";
             // 
             // lblGia
             // 
             this.lblGia.AutoSize = true;
+            this.lblGia.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblGia.ForeColor = System.Drawing.Color.Olive;
             this.lblGia.Location = new System.Drawing.Point(160, 148);
             this.lblGia.Name = "lblGia";
-            this.lblGia.Size = new System.Drawing.Size(51, 16);
+            this.lblGia.Size = new System.Drawing.Size(0, 16);
             this.lblGia.TabIndex = 6;
-            this.lblGia.Text = "label16";
             // 
             // lblSL
             // 
             this.lblSL.AutoSize = true;
             this.lblSL.Location = new System.Drawing.Point(160, 110);
             this.lblSL.Name = "lblSL";
-            this.lblSL.Size = new System.Drawing.Size(51, 16);
+            this.lblSL.Size = new System.Drawing.Size(0, 16);
             this.lblSL.TabIndex = 5;
-            this.lblSL.Text = "label15";
             // 
             // lblMoTa
             // 
-            this.lblMoTa.Location = new System.Drawing.Point(329, 33);
+            this.lblMoTa.Location = new System.Drawing.Point(391, 33);
             this.lblMoTa.Name = "lblMoTa";
-            this.lblMoTa.Size = new System.Drawing.Size(220, 131);
+            this.lblMoTa.Size = new System.Drawing.Size(158, 131);
             this.lblMoTa.TabIndex = 4;
-            this.lblMoTa.Text = "label14";
             // 
             // lblNameSP
             // 
-            this.lblNameSP.AutoSize = true;
-            this.lblNameSP.Location = new System.Drawing.Point(160, 33);
+            this.lblNameSP.Location = new System.Drawing.Point(141, 33);
             this.lblNameSP.Name = "lblNameSP";
-            this.lblNameSP.Size = new System.Drawing.Size(51, 16);
+            this.lblNameSP.Size = new System.Drawing.Size(178, 34);
             this.lblNameSP.TabIndex = 3;
-            this.lblNameSP.Text = "label13";
             // 
             // label12
             // 
@@ -227,7 +224,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(263, 33);
+            this.label8.Location = new System.Drawing.Point(325, 33);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 16);
             this.label8.TabIndex = 0;
@@ -429,7 +426,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // panel8
@@ -486,12 +483,44 @@
             this.label6.Text = "Bảng Size";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(24, 80);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(136, 40);
+            this.btnThem.TabIndex = 8;
+            this.btnThem.Text = "Thêm sản phẩm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(186, 80);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(96, 40);
+            this.btnSua.TabIndex = 9;
+            this.btnSua.Text = "Cập nhập";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(328, 82);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(138, 40);
+            this.btnXoa.TabIndex = 10;
+            this.btnXoa.Text = "Xóa sản phẩm";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1277, 590);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.listSize);
             this.Controls.Add(this.panel8);
@@ -563,8 +592,11 @@
         private System.Windows.Forms.Label lblNameSP;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblncc;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

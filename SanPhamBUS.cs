@@ -25,10 +25,11 @@ namespace quanLyShop
         public void Xem(FlowLayoutPanel dssp)
         {
             //FlowLayoutPanel dssp = new FlowLayoutPanel();
+            dssp.Controls.Clear();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "select SANPHAM.MASP,TENSP,IMG,DONGIABAN,SOLUONGTONKHO from SANPHAM\r\n";
+                string query = "select SANPHAM.MASP,TENSP,IMG,DONGIABAN,SOLUONGTONKHO from SANPHAM where TRANGTHAI=N'Còn hàng'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader sdr = cmd.ExecuteReader();
                 while (sdr.Read())
@@ -99,6 +100,32 @@ namespace quanLyShop
                 conn.Close();
             }
         }
+        public bool XoaSP(string maSP)
+        {
+            return SanPhamDAO.Instance.XoaSP(maSP);
+        }
+        public void CapNhapSP(string maSP, Label tenSP, Label ncc, Label sl, Label gia, Label loai, Label trangthai, Label mota)
+        {
+            string path_img;
+            using (SqlConnection conn =new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "select IMG from SANPHAM where MASP=@MASP";
+                SqlCommand cmd=new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MASP", maSP);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                sdr.Read();
+                path_img=sdr[0].ToString();
+                sdr.Close();
+                conn.Close();
+            }
+            string str_price = gia.Text.Replace(",", "").Replace(" ₫", "");
+            float price = float.Parse(str_price);
+            int Sltonkho = int.Parse(sl.Text.ToString());
+            formCapNhapSP form = new formCapNhapSP {Loai=loai.Text,Soluongtonkho=Sltonkho,Giaban=price,Masp=maSP, Tensp =tenSP.Text, Mota = mota.Text, Ncc = ncc.Text, Trangthai = trangthai.Text,PathImg=path_img };
+            form.Show();
+
+        }
         public int tiengiamgia(string MASP)
         {
             int money = 0;
@@ -136,6 +163,17 @@ namespace quanLyShop
                 dsSie.Items.Add(newItem);
             }
         }
+        public void info(string maSP,Label tenSP, Label ncc,Label sl,Label gia, Label loai, Label trangthai, Label mota)
+        {
+            object[] in4 = SanPhamDAO.Instance.thongtinSP(maSP);
+            tenSP.Text = in4[0].ToString();
+            ncc.Text = in4[1].ToString();
+            sl.Text = in4[2].ToString();
+            gia.Text = int.Parse(in4[3].ToString()).ToString("#,#") + " ₫";
+            loai.Text = in4[4].ToString();
+            trangthai.Text = in4[5].ToString();
+            mota.Text = in4[6].ToString();
+        }
 
         public void dsLoai(ComboBox cbodsLoai)
         {
@@ -158,5 +196,6 @@ namespace quanLyShop
             cbodsNCC.SelectedIndex = 0;
         }
 
+        
     }
 }

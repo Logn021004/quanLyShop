@@ -93,6 +93,31 @@ namespace quanLyShop
             }
             return dssize;
         }
+        public object[] thongtinSP(string maSP)
+        {
+            object[] info = new object[7];
+            using (SqlConnection conn =new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "select TENSP,TENNCC,SOLUONGTONKHO,DONGIABAN,l.TENLOAI,TRANGTHAI,MOTA\r\nfrom SANPHAM as sp,NHACUNGCAP as ncc,LOAI as l\r\nwhere sp.MANCC=ncc.MANCC and sp.LOAI=l.MALOAI and sp.MASP= @MASP";
+                SqlCommand cmd=new SqlCommand(query,conn);
+                cmd.Parameters.AddWithValue("@MASP", maSP);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    info[0] = sdr[0].ToString();
+                    info[1] = sdr[1].ToString();
+                    info[2] = sdr[2].ToString();
+                    int price = int.Parse(sdr[3].ToString()) - (int.Parse(sdr[3].ToString()) * tiengiamgia(maSP)) / 100;
+                    info[3] = price.ToString();
+                    info[4] = sdr[4].ToString();
+                    info[5] = sdr[5].ToString();
+                    info[6] = sdr[6].ToString();
+                }
+                conn.Close();
+            }
+            return info;
+        }
         public ComboBox dsLoai()
         {
             ComboBox dsloai = new ComboBox();
@@ -126,6 +151,14 @@ namespace quanLyShop
                 conn.Close();
             }
             return dsncc;
+        }
+        public bool XoaSP(string maSP)
+        {
+            string query = "update SANPHAM set TRANGTHAI=N'Ngưng bán' where MASP= @MASP ";
+            object[] para = new object[] { maSP };
+            if (Functions.Instance.ExecuteNonQuery(query, para) > 0)
+                return true;
+            return false;
         }
     }
 }
