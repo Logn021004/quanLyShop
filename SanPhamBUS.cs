@@ -124,7 +124,12 @@ namespace quanLyShop
             int Sltonkho = int.Parse(sl.Text.ToString());
             formCapNhapSP form = new formCapNhapSP {Loai=loai.Text,Soluongtonkho=Sltonkho,Giaban=price,Masp=maSP, Tensp =tenSP.Text, Mota = mota.Text, Ncc = ncc.Text, Trangthai = trangthai.Text,PathImg=path_img };
             form.Show();
-
+            
+        }
+        public void ThemSP()
+        {
+            formAddSP item = new formAddSP();
+            item.Show();
         }
         public int tiengiamgia(string MASP)
         {
@@ -195,7 +200,7 @@ namespace quanLyShop
             }
             cbodsNCC.SelectedIndex = 0;
         }
-
+        
         
     }
 }

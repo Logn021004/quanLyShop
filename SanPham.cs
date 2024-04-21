@@ -86,8 +86,16 @@ namespace quanLyShop
                 return;
             }
             else
-                SanPhamBUS.Instance.CapNhapSP(MASP, lblNameSP, lblncc, lblSL, lblGia, lblLoai, lblTrangThai, lblMoTa);
-            SanPhamBUS.Instance.Xem(flowLayoutPanelSP);
+            {
+                SanPhamBUS.Instance.CapNhapSP( MASP, lblNameSP, lblncc, lblSL, lblGia, lblLoai, lblTrangThai, lblMoTa);
+            }
+            SanPham_Load(sender, e);
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+             SanPhamBUS.Instance.ThemSP();
+             SanPham_Load(sender, e);
+        }     
     }
 }

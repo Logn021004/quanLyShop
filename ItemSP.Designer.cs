@@ -67,7 +67,7 @@
             // 
             // lblSoLuong
             // 
-            this.lblSoLuong.Location = new System.Drawing.Point(111, 250);
+            this.lblSoLuong.Location = new System.Drawing.Point(99, 250);
             this.lblSoLuong.Name = "lblSoLuong";
             this.lblSoLuong.Size = new System.Drawing.Size(102, 22);
             this.lblSoLuong.TabIndex = 3;

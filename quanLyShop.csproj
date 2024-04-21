@@ -52,6 +52,12 @@
     <Compile Include="CaLamViec.Designer.cs">
       <DependentUpon>CaLamViec.cs</DependentUpon>
     </Compile>
+    <Compile Include="formAddSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAddSP.Designer.cs">
+      <DependentUpon>formAddSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="formCapNhapSP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CaLamViec.resx">
       <DependentUpon>CaLamViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAddSP.resx">
+      <DependentUpon>formAddSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formCapNhapSP.resx">
       <DependentUpon>formCapNhapSP.cs</DependentUpon>

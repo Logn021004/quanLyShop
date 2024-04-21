@@ -426,7 +426,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // panel8
@@ -491,20 +491,21 @@
             this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm sản phẩm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
             this.btnSua.Location = new System.Drawing.Point(186, 80);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(96, 40);
+            this.btnSua.Size = new System.Drawing.Size(162, 40);
             this.btnSua.TabIndex = 9;
-            this.btnSua.Text = "Cập nhập";
+            this.btnSua.Text = "Cập nhập sản phẩm ";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(328, 82);
+            this.btnXoa.Location = new System.Drawing.Point(394, 80);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(138, 40);
             this.btnXoa.TabIndex = 10;
