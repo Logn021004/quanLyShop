@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -77,7 +78,7 @@ namespace quanLyShop
                 query = "select MASP,TENSP,IMG,DONGIABAN,SOLUONGTONKHO from SANPHAM\r\nwhere 1=1 ";
                 if (!string.IsNullOrEmpty(tensp))
                 {
-                    query += "AND TENSP like N'%" + tensp+"%'";
+                    query += "AND TENSP like N'%" +tensp+"%'";
                 }
                 if (maloai != "")
                 {
@@ -134,21 +135,27 @@ namespace quanLyShop
         public int tiengiamgia(string MASP)
         {
             int money = 0;
-            string query = "select TIENGIAM from SANPHAM,KHUYENMAI WHERE SANPHAM.MASP= KHUYENMAI.MASP and SANPHAM.MASP= @MASP \r\n";
-            object[] para = new object[] { MASP };
-            if (Functions.Instance.ExecuteQuery(query, para).Rows.Count > 0)
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                conn.Open();
+                string query = "select TIENGIAM,NGAYAPDUNG,NGAYKT from SANPHAM,KHUYENMAI where SANPHAM.MASP=KHUYENMAI.MASP and SANPHAM.MASP='" + MASP + "'";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                if (Functions.Instance.ExecuteQuery(query).Rows.Count > 0)
                 {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@MASP", MASP);
                     SqlDataReader sdr = cmd.ExecuteReader();
+                    DateTime date = DateTime.Now.Date;
                     while (sdr.Read())
-                        money = int.Parse(sdr[0].ToString());
-                    conn.Close();
+                    {
+                        DateTime dateBD = Convert.ToDateTime(sdr[1]);
+                        DateTime dateKT = Convert.ToDateTime(sdr[2]);
+                        if (dateBD <= date && dateKT >= date)
+                        {
+                             money = int.Parse(sdr[0].ToString());
+                            break;
+                        }
+                    }
                 }
-
+                conn.Close();
             }
             return money;
         }

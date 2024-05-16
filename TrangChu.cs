@@ -22,7 +22,6 @@ namespace quanLyShop
         private void TrangChu_Resize(object sender, EventArgs e)
         {
             MessageBox.Show("Không thể điều chỉnh kích thước!","Thông Cảm");
-
         }
 
 
@@ -79,6 +78,18 @@ namespace quanLyShop
             btnTrangChu_Click(btnTrangChu, new EventArgs());
         }
 
-       
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            openFormChild(new FormKhachHang());
+            DoimauBtn(btn);
+        }
+
+        private void btnHD_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            openFormChild(new FormHoaDon());
+            DoimauBtn(btn);
+        }
     }
 }

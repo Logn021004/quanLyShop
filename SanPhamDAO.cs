@@ -69,7 +69,6 @@ namespace quanLyShop
             }
             return money;
         }
-
         public ListView DSSize(string maSP)
         {
             ListView dssize = new ListView();
@@ -90,8 +89,10 @@ namespace quanLyShop
 
                     dssize.Items.Add(item);
                 }
+                conn.Close();
             }
             return dssize;
+            
         }
         public object[] thongtinSP(string maSP)
         {

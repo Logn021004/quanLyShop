@@ -86,8 +86,7 @@ namespace quanLyShop
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             NhanvienBUS.Instance.TimKiem(dtgvNhanVien, txtTimKiem);
-            AnHienbtnSaveAndClose();
-            
+            AnHienbtnSaveAndClose();         
         }
 
         private void danhSáchNhânViênToolStripMenuItem_Click(object sender, EventArgs e)

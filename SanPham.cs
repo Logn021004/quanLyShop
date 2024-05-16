@@ -52,12 +52,10 @@ namespace quanLyShop
             SanPhamBUS.Instance.dsNCC(cboNCC);
             SanPhamBUS.Instance.Xem(flowLayoutPanelSP);
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             SanPhamBUS.Instance.Search(flowLayoutPanelSP, txtNameSP.Text, cbodsLoai.SelectedItem.ToString(), cboNCC.SelectedItem.ToString());
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (this.MASP == null)
@@ -77,7 +75,6 @@ namespace quanLyShop
                     MessageBox.Show("Xóa sản phẩm không thành công", "Lỗi");
             }
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (this.MASP == null)
@@ -96,6 +93,8 @@ namespace quanLyShop
         {
              SanPhamBUS.Instance.ThemSP();
              SanPham_Load(sender, e);
-        }     
+        }
+
+      
     }
 }
