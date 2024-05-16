@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace quanLyShop
 {
@@ -24,7 +25,11 @@ namespace quanLyShop
             MessageBox.Show("Không thể điều chỉnh kích thước!","Thông Cảm");
         }
 
-
+        private void Showform()
+        {
+            FormLogin form = new FormLogin();
+            form.ShowDialog();
+        }
         private void openFormChild(Form child)
         {
             if (currentFormChild != null)
@@ -76,6 +81,16 @@ namespace quanLyShop
         private void TrangChu_Load(object sender, EventArgs e)
         {
             btnTrangChu_Click(btnTrangChu, new EventArgs());
+            if(LoginDAO.Quyen=="Nhân viên")
+            {
+                btnSanPham.Visible=false;
+                btnNhanVien.Visible = false;
+            }
+            else
+            {
+                btnSanPham.Visible = true;
+                btnNhanVien.Visible = true;
+            }
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
@@ -90,6 +105,13 @@ namespace quanLyShop
             Button btn = (Button)sender;
             openFormChild(new FormHoaDon());
             DoimauBtn(btn);
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(new ThreadStart(Showform));
+            thread.Start();
+            this.Close();
         }
     }
 }

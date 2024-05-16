@@ -152,7 +152,7 @@
             // 
             // textName
             // 
-            this.textName.Location = new System.Drawing.Point(150, 39);
+            this.textName.Location = new System.Drawing.Point(150, 33);
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(126, 22);
             this.textName.TabIndex = 3;

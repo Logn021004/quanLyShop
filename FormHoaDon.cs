@@ -57,14 +57,22 @@ namespace quanLyShop
                     }
                 }
             }
-            int rowindex=  dtgvHOADON.Rows.Add(sp.Tensp, sp.Dongia, sp.Km, 1, sp.Dongia);
-            DataGridViewButtonCell buttonTangSL = new DataGridViewButtonCell();
-            buttonTangSL.Value = "+";
-            dtgvHOADON.Rows[rowindex].Cells[5] = buttonTangSL;
-            DataGridViewButtonCell buttonGiamSL = new DataGridViewButtonCell();
-            buttonGiamSL.Value = "-";
-            dtgvHOADON.Rows[rowindex].Cells[6] = buttonGiamSL;
-            lbltongTien();
+            if (sp.Sl > 0)
+            {
+                int rowindex = dtgvHOADON.Rows.Add(sp.Tensp, sp.Dongia, sp.Km, 1, sp.Dongia);
+                DataGridViewButtonCell buttonTangSL = new DataGridViewButtonCell();
+                buttonTangSL.Value = "+";
+                dtgvHOADON.Rows[rowindex].Cells[5] = buttonTangSL;
+                DataGridViewButtonCell buttonGiamSL = new DataGridViewButtonCell();
+                buttonGiamSL.Value = "-";
+                dtgvHOADON.Rows[rowindex].Cells[6] = buttonGiamSL;
+                lbltongTien();
+            }
+            else
+            {
+                MessageBox.Show("Sản Phẩm Đã Hết!");
+            }
+           
         }
         private void btnReset_Click_1(object sender, EventArgs e)
         {
@@ -217,7 +225,20 @@ namespace quanLyShop
                 }
                 else if (hoadonBUS.Instance.ThanhToan(dtgvHOADON, txtSdtSearch, txtGiamGia, txtTienTra, txtTienThua, lblTongTien))
                 {
-                    MessageBox.Show("Thanh Toán thành công!");
+                  //  MessageBox.Show("Thanh Toán thành công!");
+                    object[] infoBill = hoadonBUS.Instance.getBill(hoadonDAO.maHD);
+                    InHoaDon bill = new InHoaDon() {
+                        MAHD = int.Parse(infoBill[0].ToString()),
+                        TENNV = infoBill[1].ToString(),
+                        TENKHACH = infoBill[2].ToString(),
+                        DATE = infoBill[3].ToString(),
+                        GIAMGIA = int.Parse(infoBill[4].ToString()),
+                        TIENTRA=float.Parse(infoBill[5].ToString()),
+                        TIENTHUA= float.Parse(infoBill[6].ToString()),
+                        TONGTIEN= float.Parse(infoBill[7].ToString())
+                    };
+                    bill.ShowDialog();
+                    btnHuy_Click(sender, e);
                 }
                 else
                 {
@@ -239,6 +260,7 @@ namespace quanLyShop
             txtGiamGia.Text = "0";
             txtTienTra.Text = "0";
             txtTienThua.Text = "Không đủ";
+            txtSdtSearch.Text = "0";
             FormHoaDon_Load(sender, e);
         }
     }

@@ -55,10 +55,13 @@ namespace quanLyShop
             float tienthua = float.Parse(Tienthua.Text);
             tienthua = Math.Abs(tienthua);
             float tongtien = float.Parse(Tongtien.Text.Replace(",","").Replace(" ₫", "").Trim());
-
-
             return hoadonDAO.Instance.ThanhToan(listData, manv, sdtKH, giamgia, tientra, tienthua, tongtien);
         }
+        public object[] getBill(string mahd)
+        {
+            return hoadonDAO.Instance.getBill(mahd);
+        }
+    
     }
 }
 

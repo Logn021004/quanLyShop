@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addUser.Designer.cs">
+      <DependentUpon>addUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="CaLamViec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     <Compile Include="FormKhachHang.Designer.cs">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Functions.cs" />
     <Compile Include="hoadonBUS.cs" />
     <Compile Include="hoadonDAO.cs" />
@@ -111,12 +123,19 @@
     </Compile>
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="KhachHangDAO.cs" />
+    <Compile Include="LoginBUS.cs" />
+    <Compile Include="LoginDAO.cs" />
     <Compile Include="NhanvienBUS.cs" />
     <Compile Include="NhanvienDAO.cs" />
     <Compile Include="NhanvienDTO.cs" />
     <Compile Include="PhanCongBUS.cs" />
     <Compile Include="PhanCongDAO.cs" />
     <Compile Include="PhanCongDTO.cs" />
+    <Compile Include="QlyShopDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QlyShopDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SanPhamBUS.cs" />
     <Compile Include="SanPhamDAO.cs" />
     <Compile Include="SanPhamDTO.cs" />
@@ -141,6 +160,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userBUS.cs" />
+    <Compile Include="userDAO.cs" />
+    <EmbeddedResource Include="addUser.resx">
+      <DependentUpon>addUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CaLamViec.resx">
       <DependentUpon>CaLamViec.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,12 +180,16 @@
     <EmbeddedResource Include="FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InHoaDon.resx">
       <DependentUpon>InHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemSP.resx">
       <DependentUpon>ItemSP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhieuHoaDon.rdlc" />
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +207,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -190,11 +219,25 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QlyShopDataSet.xsc">
+      <DependentUpon>QlyShopDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QlyShopDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QlyShopDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QlyShopDataSet.xss">
+      <DependentUpon>QlyShopDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\Imgs\hello-2488_256.gif" />
+    <None Include="Resources\pngwing.com %281%29.png" />
+    <None Include="Resources\pngwing.com.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

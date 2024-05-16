@@ -58,7 +58,11 @@ namespace quanLyShop
       
         private void btnThem_Click(object sender, EventArgs e)
         {
+            textName.Text = "";
+            txtDchi.Text = "";
+            txtSDT.Text = "";
             anhienbtn(true);
+            btnUpdate.Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

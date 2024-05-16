@@ -2,7 +2,6 @@ D:\Worksacpe\QlyShop\quanLyShop\bin\Debug\quanLyShop.exe.config
 D:\Worksacpe\QlyShop\quanLyShop\bin\Debug\quanLyShop.exe
 D:\Worksacpe\QlyShop\quanLyShop\bin\Debug\quanLyShop.pdb
 D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.csproj.AssemblyReference.cache
-D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.csproj.SuggestedBindingRedirects.cache
 D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.Properties.Resources.resources
 D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.csproj.GenerateResource.cache
 D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.csproj.CoreCompileInputs.cache
@@ -69,4 +68,7 @@ D:\Worksacpe\QlyShop\quanLyShop\bin\Debug\ru\Microsoft.ReportViewer.WinForms.res
 D:\Worksacpe\QlyShop\quanLyShop\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Worksacpe\QlyShop\quanLyShop\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.FormHoaDon.resources
-D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.csproj.CopyComplete
+D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.InHoaDon.resources
+D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.csproj.Up2Date
+D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.FormLogin.resources
+D:\Worksacpe\QlyShop\quanLyShop\obj\Debug\quanLyShop.addUser.resources

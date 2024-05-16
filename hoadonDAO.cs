@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
@@ -22,18 +23,27 @@ namespace quanLyShop
             }
         }
         string connectionString = @"Data Source=LONG-PC;Initial Catalog=QlyShop;Integrated Security=True";
-
+       
+        private static string MAHD;
+        public static string maHD
+        {
+            get
+            {
+                return MAHD;
+            }
+        }
         public SanPhamDTO thongtinSP(string masp)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "select TENSP,DONGIABAN,MASP from SANPHAM where SANPHAM.MASP=N'"+ masp+"'";
+                string query = "select TENSP,DONGIABAN,MASP,SOLUONGTONKHO from SANPHAM where SANPHAM.MASP=N'" + masp+"'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader sdr = cmd.ExecuteReader();
                 sdr.Read();
                 SanPhamDTO infosp = new SanPhamDTO() { Tensp = sdr[0].ToString()};
                 infosp.Masp = sdr[2].ToString();
+                infosp.Sl = int.Parse(sdr[3].ToString());
                 float dongia = float.Parse(sdr[1].ToString());
                 sdr.Close();             
                 query = "select TIENGIAM,NGAYAPDUNG,NGAYKT from SANPHAM,KHUYENMAI where SANPHAM.MASP=KHUYENMAI.MASP and SANPHAM.MASP='" + masp + "'";
@@ -110,8 +120,7 @@ namespace quanLyShop
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string MAHD;
-                manv = "1";
+                manv = LoginDAO.Manv;
                 string makh = getMAKH(sdtKH);
                 string query = "EXEC InsertHoaDon @MANV = "+manv+", @MAKH = "+makh+", @DATE = '"+DateTime.Now.ToString()+"', @GIAMGIA = "+giamgia+", @TIENTRA = "+tientra+", @TIENTHUA = "+tienthua+", @TONGTIEN = "+tongtien+";";
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -169,6 +178,28 @@ namespace quanLyShop
                 conn.Close();             
             }
             return masp;
+        }
+        public object[] getBill(string mahd)
+        {
+            object[] infoBill = new object[8];
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "exec getBill "+mahd+"";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                sdr.Read();
+                infoBill[0] = sdr[0].ToString() ;
+                infoBill[1] = sdr[1].ToString();
+                infoBill[2] = sdr[2].ToString();
+                infoBill[3] = sdr[3].ToString();
+                infoBill[4] = sdr[4].ToString();
+                infoBill[5] = sdr[5].ToString();
+                infoBill[6] = sdr[6].ToString();
+                infoBill[7] = sdr[7].ToString();
+                conn.Close();
+            }
+            return infoBill;
         }
     }
 }

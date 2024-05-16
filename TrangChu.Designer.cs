@@ -35,8 +35,9 @@
             this.btnSanPham = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.pnl_Menu = new System.Windows.Forms.Panel();
-            this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnHD = new System.Windows.Forms.Button();
+            this.btnKhachHang = new System.Windows.Forms.Button();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnl_Menu.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +116,7 @@
             // pnl_Menu
             // 
             this.pnl_Menu.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pnl_Menu.Controls.Add(this.btnDangXuat);
             this.pnl_Menu.Controls.Add(this.btnHD);
             this.pnl_Menu.Controls.Add(this.btnKhachHang);
             this.pnl_Menu.Controls.Add(this.btnNhanVien);
@@ -127,6 +129,22 @@
             this.pnl_Menu.Name = "pnl_Menu";
             this.pnl_Menu.Size = new System.Drawing.Size(138, 592);
             this.pnl_Menu.TabIndex = 0;
+            // 
+            // btnHD
+            // 
+            this.btnHD.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnHD.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHD.FlatAppearance.BorderSize = 0;
+            this.btnHD.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHD.Location = new System.Drawing.Point(0, 255);
+            this.btnHD.Name = "btnHD";
+            this.btnHD.Size = new System.Drawing.Size(138, 37);
+            this.btnHD.TabIndex = 5;
+            this.btnHD.Text = "Bán Hàng";
+            this.btnHD.UseVisualStyleBackColor = false;
+            this.btnHD.Click += new System.EventHandler(this.btnHD_Click);
             // 
             // btnKhachHang
             // 
@@ -144,21 +162,21 @@
             this.btnKhachHang.UseVisualStyleBackColor = false;
             this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
-            // btnHD
+            // btnDangXuat
             // 
-            this.btnHD.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnHD.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHD.FlatAppearance.BorderSize = 0;
-            this.btnHD.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHD.Location = new System.Drawing.Point(0, 255);
-            this.btnHD.Name = "btnHD";
-            this.btnHD.Size = new System.Drawing.Size(138, 37);
-            this.btnHD.TabIndex = 5;
-            this.btnHD.Text = "Bán Hàng";
-            this.btnHD.UseVisualStyleBackColor = false;
-            this.btnHD.Click += new System.EventHandler(this.btnHD_Click);
+            this.btnDangXuat.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDangXuat.FlatAppearance.BorderSize = 0;
+            this.btnDangXuat.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 292);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(138, 37);
+            this.btnDangXuat.TabIndex = 6;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // TrangChu
             // 
@@ -186,6 +204,7 @@
         private System.Windows.Forms.Panel pnl_Menu;
         private System.Windows.Forms.Button btnKhachHang;
         private System.Windows.Forms.Button btnHD;
+        private System.Windows.Forms.Button btnDangXuat;
     }
 }
 

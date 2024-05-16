@@ -121,7 +121,6 @@ namespace quanLyShop
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
             if (NhanvienBUS.Instance.themNVDaNghi(txtMaNV))
             {
                 MessageBox.Show("Thêm nhân viên trở lại");
@@ -201,6 +200,12 @@ namespace quanLyShop
         {
             danhSáchNhânViênToolStripMenuItem_Click(sender,e);
             AnHienbtnSaveAndClose();
+        }
+
+        private void thêmTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addUser newfom = new addUser();
+            newfom.ShowDialog();
         }
     }
 }

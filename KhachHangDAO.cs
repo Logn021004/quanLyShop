@@ -34,7 +34,7 @@ namespace quanLyShop
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "select HOADON.MAHD,NHANVIEN.TENNV,KHACHHANG.TENKHACH,HOADON.NGAYLAPHD,HOADON.GIAMGIA,HOADON.TONGTIEN,HOADON.TIENTRA,HOADON.TIENTHUA\r\nfrom HOADON,KHACHHANG,NHANVIEN \r\nwhere HOADON.MAKH=KHACHHANG.ID and HOADON.MANV=NHANVIEN.MANV and KHACHHANG.ID=@ID";
+                string query = "select HOADON.MAHD,NHANVIEN.TENNV,KHACHHANG.TENKHACH,HOADON.NGAYLAPHD,HOADON.GIAMGIA,HOADON.TONGTIEN,HOADON.TIENTRA,HOADON.TIENTHUA\r\nfrom HOADON,KHACHHANG,NHANVIEN \r\nwhere HOADON.MAKH=KHACHHANG.ID and HOADON.MANV=NHANVIEN.MANV and KHACHHANG.ID=@ID order by NGAYLAPHD desc ";
                 SqlCommand cmd = new SqlCommand(query,conn);
                 cmd.Parameters.AddWithValue("@ID", idKhach);
                 SqlDataReader sdr=cmd.ExecuteReader();
